@@ -1,0 +1,25 @@
+<!-- Search Form -->
+<form action="/specialty" method="GET">
+    <input type="text" name="first_name" placeholder="Search by Specialty" required>
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Provider ID</th>
+            <th>First Name</th>
+            <th>Provider Specialty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row => { %>
+            <tr>
+                <td><%= row.provider_id %></td>
+                <td><%= row.first_name %></td>
+                <td><%= row.provider_specialty %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+

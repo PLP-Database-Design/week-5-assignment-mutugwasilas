@@ -1,0 +1,26 @@
+<!-- Search Form -->
+<form action="/patients" method="GET">
+    <input type="text" name="first_name" placeholder="Search by First Name" required>
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row => { %>
+            <tr>
+                <td><%= row.patient_id %></td>
+                <td><%= row.first_name %></td>
+                <td><%= row.last_name %></td> 
+                
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
